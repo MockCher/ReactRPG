@@ -1,0 +1,68 @@
+html,
+body {
+  margin: 0;
+}
+
+.Game {
+  font-family: sans-serif;
+  /* text-align: center; */
+  height: 100vh;
+  width: 100vw;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: rgb(0, 100, 13);
+}
+
+.fog-of-war {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: -webkit-mask-position 1s;
+  -webkit-mask-size: 100vw 100vh;
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 64px,
+    rgba(0, 0, 0, 1) 92px
+  );
+}
+
+.checkerBoard {
+  background: conic-gradient(
+      rgba(255, 255, 255, 0.2) 0.25turn,
+      rgba(0, 0, 0, 0.2) 0.25turn 0.5turn,
+      rgba(255, 255, 255, 0.2) 0.5turn 0.75turn,
+      rgba(0, 0, 0, 0.2) 0.75turn
+    )
+    top left / 64px 64px repeat;
+}
+
+.sprite {
+  animation: sprite 0.5s steps(3) infinite;
+}
+
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: blue; */
+}
+
+.hud-container {
+  background-color: brown;
+  padding: 2px 2px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@keyframes sprite {
+  to {
+    background-position-x: -96px;
+  }
+}
